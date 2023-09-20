@@ -8,21 +8,21 @@ fun convertTemperature(
             when (toUnit) {
                 "Celsius" -> return (value - 32) * 5 / 9
                 "Kelvin" -> return (value - 32) * 5 / 9 + 273.15
-                else -> return value // Fahrenheit to Fahrenheit, no conversion needed
+                else -> return value
             }
         }
         "Celsius" -> {
             when (toUnit) {
                 "Fahrenheit" -> return (value * 9 / 5) + 32
                 "Kelvin" -> return value + 273.15
-                else -> return value // Celsius to Celsius, no conversion needed
+                else -> return value
             }
         }
         "Kelvin" -> {
             when (toUnit) {
                 "Fahrenheit" -> return (value - 273.15) * 9 / 5 + 32
                 "Celsius" -> return value - 273.15
-                else -> return value // Kelvin to Kelvin, no conversion needed
+                else -> return value 
             }
         }
         else -> throw IllegalArgumentException("Invalid temperature unit: $fromUnit")
